@@ -7,10 +7,10 @@
     </div>
     <div v-if="load">
       <div v-if="howmany > 0">
-        この文章はトークンを所持している人のみ表示されます。
+        <p>HELLO,WORLD!</p>
       </div>
       <div v-else>
-        この文章はトークンを所持していない人のみ表示されます。
+        <p>You dont have token.</p>
       </div>
     </div>
   </div>
@@ -58,10 +58,6 @@ export default {
       } else {
         console.log("Please install MetaMask!");
       }
-    },
-    requestAccount: () => {
-      const { ethereum } = window;
-      ethereum.request({ method: "eth_requestAccounts" });
     },
     getAccount: async function() {
       const accounts = await window.ethereum.request({
